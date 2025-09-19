@@ -84,7 +84,7 @@ function App() {
       display: 'flex', position: 'fixed', width: '100%', marginTop: '4px'
     }}>
 
-      <img style={{ width: '50px', height: '50px', borderRadius: '50%', margin: '10px' ,cursor:'pointer'}} src="/MyPic.jpeg" alt="Profile" onClick={() => setIsOpen(true)}/>
+      <img style={{ width: '50px', height: '50px', borderRadius: '50%', margin: '10px' ,cursor:'pointer'}} src={process.env.PUBLIC_URL +"/MyPic.jpeg"} alt="Profile" onClick={() => setIsOpen(true)}/>
       <ProfileOut isOpen={isOpen} onClose={() => setIsOpen(false)}>
         <h2 style={{textAlign:'center'}}>My Profile</h2>
         <div style={{display:'flex' ,gap:'15px'}}>

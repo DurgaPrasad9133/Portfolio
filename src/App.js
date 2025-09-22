@@ -44,6 +44,11 @@ function App() {
   const [fontColor, setFontcolor] = useState('#223633ff');
   const [headBarLength, setHeadBarLemgth] = useState("0px")
   const [isOpen, setIsOpen] = useState(false);
+  const [width, setWidth] = useState(window.innerWidth);
+
+  const handleResize = () => {
+    setWidth(window.innerWidth);
+  }
 
   useEffect(() => {
     const handleMouseMove = () => {
@@ -74,7 +79,10 @@ function App() {
 
 
 
-  return (<div style={{ background: bgColor, transition: 'background 5s ease', color: fontColor ,transition: 'color 1s ease'}}  >
+  return (
+
+    (width <768)?<h2>Sorry this will not be opend in mobile</h2>:
+  <div style={{ background: bgColor, transition: 'background 5s ease', color: fontColor ,transition: 'color 1s ease'}}  >
 
     <nav style={{ background: 'red', position: 'fixed', background: "rgba(255, 255, 255, 0.2)", backdropFilter: "blur(2px)" }} >
       <div style={{ borderTop: "4px solid ", width: headBarLength, transition: "border-color 4s ease" }} ></div>

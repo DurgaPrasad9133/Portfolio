@@ -152,16 +152,10 @@ If you're looking for a reliable developer to turn your ideas into powerful web 
    <FaBars style={{ width: '30px', height: '30px', position: 'relative', margin: '20px', cursor:'pointer'}} size={14} onClick={()=>toggleOptions()} />
     { (showOptions)?
     <div style={{position:'absolute',top:'80px',background:'#5d4cf1ff',color:'white',right:'20px',padding:'10px',borderRadius:'8px' ,width:'150px',boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
-    <FaTimes style={{ position: 'absolute', top: '10px', right: '10px', cursor:'pointer'}} size={14} onClick={()=>toggleOptions()} /> 
-    <br/>
-      <ul style={{
-  listStyleType: 'none',
-  padding: '0px',
-  marginTop: '0px',
-  display: 'flex',
-  flexDirection: 'column',
-  gap: '10px'
+    
+      <ul style={{ listStyleType: 'none',  padding: '0px', marginTop: '0px',  display: 'flex', flexDirection: 'column', gap: '10px'
 }}>
+  <button style={{background:'red' ,borderRadius:'20%',width:'25px',position:'relative',left:'130px' }} onClick={()=>toggleOptions()}><FaTimes/></button>
   <li><a href="#home" style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}>Home</a></li>
   <li><a href="#portfolio" style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}>My Portfolio</a></li>
   <li><a href="#experience" style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}>My Experience</a></li>

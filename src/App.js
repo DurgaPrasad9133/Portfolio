@@ -1,7 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState } from 'react';
-import { FaInstagram, FaYoutube, FaTwitter, FaGithub, FaWhatsapp ,FaBars} from 'react-icons/fa';
+import { FaInstagram, FaYoutube, FaTwitter, FaGithub, FaWhatsapp ,FaBars,FaTimes} from 'react-icons/fa';
 import { createPortal } from 'react-dom';
 
 function ProfileOut({ isOpen, onClose, children }){
@@ -76,8 +75,12 @@ function App() {
     return () => window.removeEventListener("scroll", handleMouseMove);
   });
 
+const [showOptions, setShowOptions] = useState(false);
 
-
+const toggleOptions = () => {
+  console.log("clicked");
+  setShowOptions(!showOptions);
+}
 
   return (
 
@@ -145,8 +148,30 @@ If you're looking for a reliable developer to turn your ideas into powerful web 
         
         
           </div>
-   <FaBars style={{ width: '30px', height: '30px', position: 'relative', margin: '20px'}} size={14} />
+    
+   <FaBars style={{ width: '30px', height: '30px', position: 'relative', margin: '20px', cursor:'pointer'}} size={14} onClick={()=>toggleOptions()} />
+    { (showOptions)?
+    <div style={{position:'absolute',top:'80px',background:'#5d4cf1ff',color:'white',right:'20px',padding:'10px',borderRadius:'8px' ,width:'150px',boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
+    <FaTimes style={{ position: 'absolute', top: '10px', right: '10px', cursor:'pointer'}} size={14} onClick={()=>toggleOptions()} /> 
+    <br/>
+      <ul style={{
+  listStyleType: 'none',
+  padding: '0px',
+  marginTop: '0px',
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '10px'
+}}>
+  <li><a href="#home" style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}>Home</a></li>
+  <li><a href="#portfolio" style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}>My Portfolio</a></li>
+  <li><a href="#experience" style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}>My Experience</a></li>
+  <li><a href="#contact" style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}>Contact Me</a></li>
+</ul>
+
+    </div>:<></>}
+
     </nav>
+     
 
 
     <div style={{ display: 'flex', gap: '50px' }}>
@@ -169,11 +194,11 @@ If you're looking for a reliable developer to turn your ideas into powerful web 
 
 
 
-        <div id='Home' style={{ margin: '30px', marginTop: '145px', padding: '20px' }}>
+        <div id='home' style={{ margin: '30px', marginTop: '145px', padding: '20px' }}>
           <h1 style={{ fontSize: '42px', fontWeight: '700px', margin: 0, lineHeight: 1.2 }}>Good day,</h1>
           <h1 style={{ fontSize: '42px', margin: 0, lineHeight: 1.2 }}>I am Durga Prasad,</h1>
           <h2 style={{ fontSize: '28px', color: 'blue', margin: 0, lineHeight: 1.2 }} >A Python Developer</h2>
-          <p>I’m a skilled mobile app developer with over 4 years of experiencein the IT industry. <br /> Using React Native, I create full-stack mobile apps that cater to the needs of diverse clients. My expertise lies in developing hybrid apps for both Android and iOS platforms, ensuring that users have access to efficient and user-friendly applications. <br /> With a deep understanding of the mobile app development process, I am able to deliver high-quality results that exceed expectations. <br /> If you’re looking for a reliable mobile app developer to bring your ideas to life, I’m here to help!</p>
+          <p>I’m a skilled WEB developer with over 4 Months of experiencein the IT industry. <br /> Using React Native, I create full-stack Web applications  that cater to the needs of diverse clients. My expertise lies in developing Web application for both Android and iOS platforms, ensuring that users have access to efficient and user-friendly applications. <br /> With a deep understanding of the mobile app development process, I am able to deliver high-quality results that exceed expectations. <br /> If you’re looking for a reliable mobile app developer to bring your ideas to life, I’m here to help!</p>
           <button style={{ width: '100px', height: '40px', cursor: 'pointer' }}  size={24} onClick= {()=>{ window.open("https://wa.me/919133868020", "_blank");}}> Contact me</button>
         </div>
 
@@ -181,17 +206,17 @@ If you're looking for a reliable developer to turn your ideas into powerful web 
         <div id='MyPortFolio' style={{ margin: '90px', marginTop: '145px' }}>
 
           <h1 >My Portfolio</h1><div style={{ borderTop: "2px solid black", width: '400px' }} ></div><br />
-          <div style={{ display: 'flex' }}>
+          <div style={{ display: 'flex' }} id='portfolio'>
             <div>
               <p1>Greetings, I'm S S N S V D Prasad, a passionate and dedicated software developer with hands-on experience in building efficient and scalable web applications. My core expertise lies in backend development using Python and Django, coupled with strong proficiency in working with MySQL, Redis, and modern frontend frameworks like React.</p1>
               <br /><br /><p1>I currently work at Optival Solutions (MEDPLUS), where I contribute to full-stack development, API design, database management, and performance optimization. My role involves collaborating across teams to develop reliable, user-centric solutions that align with business goals and enhance user experience.</p1>
               <br /><br /><p1>My journey into software development began with a deep interest in solving real-world problems through code. Over time, I’ve refined my skills through academic projects, internships, and now in a professional setting. With a strong foundation in data structures and algorithms, and a keen eye for clean architecture, I aim to build software that is both maintainable and impactful.</p1>
               <br/><p>Having worked in collaborative, fast-paced environments, I value teamwork, continuous learning, and writing clean, testable code. I’m always eager to take on new challenges, explore modern technologies, and grow as a well-rounded developer.</p>
               <ul style={{ display: 'flex', gap: '30px' }}>
-                <li>JavaScript</li>
-                <li>React </li>
-                <li>Django</li>
-                <li>Mysql</li>
+                <li><a href='https://www.w3schools.com/js/' target="_blank"  style={{textDecoration:'none'}}>JavaScript</a></li>
+                <li><a href='https://react.dev/'  target="_blank"   style={{textDecoration:'none'}}>React </a></li>
+                <li><a href='https://www.djangoproject.com/'  target="_blank"  style={{textDecoration:'none'}}>Django</a></li>
+                <li><a href='https://www.w3schools.com/sql/'  target="_blank"  style={{textDecoration:'none'}}>Mysql</a></li>
 
               </ul>
             </div>
@@ -257,7 +282,7 @@ I explained the entire flow and logic behind my solutions clearly. They further 
               </ul></div>
           </div>
           {/* <div style={{ borderTop: "2px solid black", width: "850px" }}> */}
-          <div style={{ background: '#383232ff', width: '100%', textAlign: 'center', margin: '20px', height: '400px' }}>
+          <div id='contact' style={{ background: '#383232ff', width: '100%', textAlign: 'center', margin: '20px', height: '400px' }}>
             <div style={{ margin: '150px', width: '50%',padding:'100px' }}>
               <p1>Get in touch</p1><br />
               <h1>Let’s Work Together</h1>

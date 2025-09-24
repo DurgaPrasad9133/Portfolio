@@ -99,7 +99,7 @@ const toggleOptions = () => {
       <ProfileOut isOpen={isOpen} onClose={() => setIsOpen(false)}>
         <h2 style={{textAlign:'center'}}>My Profile</h2>
         <div style={{display:'flex' ,gap:'15px'}}>
-        <img style={{ width: '180px', height: '180px', margin: '10px' ,cursor:'pointer'}} src='/MyPic.jpeg' alt='Profile pic'/>
+        <img style={{ width: '180px', height: '180px', margin: '10px' ,cursor:'pointer'}} src={process.env.PUBLIC_URL+'/MyPic.jpeg'} alt='Profile pic'/>
       <div>
         <b>
       <label>Name </label><br/>
